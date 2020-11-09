@@ -19,6 +19,7 @@ public class LecturaDeMouse : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             bloqueados.Add(UtilsClass.GetMouseWorldPosition());
+            Debug.Log(UtilsClass.GetMouseWorldPosition());
         }
     }
 }

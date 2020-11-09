@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Personajes
+    uniqueID: 992058231
+    locked: 0
   - name: Mapa
     uniqueID: 482919213
     locked: 0
   - name: Items
     uniqueID: 3501672705
-    locked: 0
-  - name: Personajes
-    uniqueID: 992058231
     locked: 0

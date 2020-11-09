@@ -13,7 +13,7 @@ public class Pruebas : MonoBehaviour
 
     private void Start()
     {
-        tilemap = new Tilemap(20, 10, 10f, Vector3.zero);
+        tilemap = new Tilemap(22, 12, 10f, Vector3.zero);
 
         tilemap.DefVisualTM(visualTilemap);
     }

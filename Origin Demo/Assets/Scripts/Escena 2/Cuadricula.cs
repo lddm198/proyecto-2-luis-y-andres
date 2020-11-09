@@ -10,7 +10,6 @@ public class Cuadricula<TObjetoCuad> {
     public class CuadCambioDeObjetoEventArgs : EventArgs {
         public int x;
         public int y;
-        public bool seCamina;
     }
 
     int ancho;
@@ -35,7 +34,7 @@ public class Cuadricula<TObjetoCuad> {
 
             }
         }
-        bool debug = true;
+        bool debug = false;
         if (debug)
         {
             //Ciclos para crear texto en cada espacio de la cuadricula (debug)
