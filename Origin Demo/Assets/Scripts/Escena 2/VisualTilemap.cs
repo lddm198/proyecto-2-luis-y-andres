@@ -7,10 +7,12 @@ public class VisualTilemap : MonoBehaviour {
     private Cuadricula<Tilemap.ObjetoTilemap> cuadricula;
     private Mesh mesh;
     private bool actualizarMesh;
+    public Cuadricula<TilemapMovimiento.ObjetoCuadricula> cuadricula2;
 
     private void Awake() {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        cuadricula2 = new Cuadricula<TilemapMovimiento.ObjetoCuadricula>(34, 14, 10f, Vector3.zero, (Cuadricula<TilemapMovimiento.ObjetoCuadricula> c, int x, int y) => new TilemapMovimiento.ObjetoCuadricula(c, x, y));
     }
 
     public void DefCuad(Cuadricula<Tilemap.ObjetoTilemap> cuadricula) {
@@ -41,15 +43,17 @@ public class VisualTilemap : MonoBehaviour {
 
                 Tilemap.ObjetoTilemap objetoCuad = cuadricula.ObtObjeto(x, y);
                 Tilemap.ObjetoTilemap.SpriteTilemap spriteTilemap = objetoCuad.ObtSpriteTilemap();
-                Vector2 ValorCuadUV;
+                Vector2 valorUV00, valorUV11;
                 if (spriteTilemap == Tilemap.ObjetoTilemap.SpriteTilemap.Nada) { //Si no hay textura en ese cuadro no se muestra
-                    ValorCuadUV = Vector2.zero;
+                    valorUV00 = Vector2.zero;
+                    valorUV11 = Vector2.zero;
                     tamQuad = Vector3.zero;
                 }
                 else {  //Si no, se muetra verde (el suelo)
-                    ValorCuadUV = Vector2.one;
+                    valorUV00 = Vector2.zero;
+                    valorUV11 = Vector2.one;
                 }
-                MeshUtils.AddToMeshArrays(vertices, uv, triangulos, indice, cuadricula.GetPosicionMundo(x, y) + tamQuad * .5f, 0f, tamQuad, ValorCuadUV, ValorCuadUV);
+                MeshUtils.AddToMeshArrays(vertices, uv, triangulos, indice, cuadricula.GetPosicionMundo(x, y) + tamQuad * .5f, 0f, tamQuad, valorUV00, valorUV11);
             }
         }
 

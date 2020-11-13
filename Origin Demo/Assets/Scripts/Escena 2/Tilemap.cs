@@ -17,6 +17,11 @@ public class Tilemap {
         }
     }
 
+    public Cuadricula<ObjetoTilemap> ObtCuadricula()
+    {
+        return cuadricula;
+    }
+
     public void DefVisualTM(VisualTilemap visualTilemap) {
         visualTilemap.DefCuad(cuadricula);
     }
@@ -25,7 +30,7 @@ public class Tilemap {
 
         public enum SpriteTilemap {  //Los diferentes tipos de suelo en el tilemap
             Nada,
-            Suelo
+            Mover
         }
 
         private Cuadricula<ObjetoTilemap> cuadricula;
@@ -41,7 +46,6 @@ public class Tilemap {
         
         public void DefSpriteTM(SpriteTilemap spriteTilemap) {  //Funcion para definir el sprite en un cuadro del tilemap
             this.spriteTilemap = spriteTilemap;
-            cuadricula.DebugCuadricula[x, y].text = cuadricula.matCuadricula[x, y].ToString();
             cuadricula.ActivarCambioCuadricula(x, y);
         }
 

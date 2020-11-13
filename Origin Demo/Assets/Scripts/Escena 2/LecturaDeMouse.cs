@@ -1,11 +1,26 @@
 ﻿using CodeMonkey.Utils;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class LecturaDeMouse : MonoBehaviour
 {
+    [SerializeField] private VisualTilemap visualTilemap;
+
     public List<Vector3> bloqueados;
+
+    private enum EstadoActual
+    {
+        Normal,
+        Esperando
+    }
+    EstadoActual Estado;
+
+    private void Awake()
+    {
+        Estado = EstadoActual.Normal;
+    }
 
     private void Start()
     {
@@ -34,21 +49,19 @@ public class LecturaDeMouse : MonoBehaviour
         };
     }
 
-    
-    
-    //public Pathfinding pathfinding = new Pathfinding(20, 10);
     // Update is called once per frame
     void Update()
     {  
         if (Input.GetMouseButtonDown(0)) {
-           
-            GetComponent<MovimientoPathfinding>().DefPosicion(UtilsClass.GetMouseWorldPosition(), bloqueados); //Le envia la posicion del mouse para moverlo mas adelante
+            if (visualTilemap.cuadricula2.ObtObjeto(UtilsClass.GetMouseWorldPosition()).ObtPosicionEnRango())
+            {
+                GetComponent<MovimientoPathfinding>().DefPosicion(UtilsClass.GetMouseWorldPosition(), bloqueados); //Le envia la posicion del mouse para moverlo mas adelante
+            }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            //bloqueados.Add(UtilsClass.GetMouseWorldPosition());
-            //Debug.Log(UtilsClass.GetMouseWorldPosition());
+
         }
     }
 }

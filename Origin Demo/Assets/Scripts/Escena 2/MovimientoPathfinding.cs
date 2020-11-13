@@ -8,9 +8,8 @@ public class MovimientoPathfinding : MonoBehaviour
     private List<Nodo_PathF> lisCaminoNod;
     private int indCamino = -1;
     public Pathfinding pathfinding;
-    private List<Vector3> bloqueados;
-    public int xIni, yIni, xFin, yFin;
-    public Rigidbody2D rb;
+    public List<Vector3> bloqueados;
+    private int xIni, yIni, xFin, yFin;
     public Animator animacion;
     Vector3 sgtePosicion;
     Vector3 moverposicion;
@@ -22,7 +21,7 @@ public class MovimientoPathfinding : MonoBehaviour
         while(bloqueados.Count > 0) {
             if(bloqueados[0] != Vector3.zero)
             {
-                Block(bloqueados[0]);
+                Block(bloqueados[0], pathfinding);
                 bloqueados.RemoveAt(0);
             }
         }
@@ -33,14 +32,9 @@ public class MovimientoPathfinding : MonoBehaviour
         lisCaminoNod = pathfinding.EnconCamino(xIni, yIni, xFin, yFin);    //Lista del camino en Nodos de pathfinding
 
         if (lisCaminoNod.Count > 0) indCamino = 0;
-        if (lisCaminoNod != null) {
-            for (int i = 0; i < lisCaminoNod.Count - 1; i++) {
-                //Debug.DrawLine(new Vector3(lisCaminoNod[i].x, lisCaminoNod[i].y) * 10f + Vector3.one * 5f, new Vector3(lisCaminoNod[i + 1].x, lisCaminoNod[i + 1].y) * 10f + Vector3.one * 5f, Color.green, 2f);
-            }
-        }
     }
 
-    public void Block(Vector3 posicion) {
+    public void Block(Vector3 posicion, Pathfinding pathfinding) {
         pathfinding.ObtCuadricula().GetXY(posicion, out int x1, out int y1);
         pathfinding.ObtNodo(x1, y1).DefSeCamina(false);
     }
@@ -63,7 +57,7 @@ public class MovimientoPathfinding : MonoBehaviour
             }
 
             Vector3 velocidad = (sgtePosicion - transform.position).normalized;
-            GetComponent<RangoMovimiento>().DefRango(velocidad);
+            GetComponent<VelocidadMovimiento>().DefVelocidad(velocidad);
 
             float distanciaPosicionAlcanzada = 1f;
             if (Vector3.Distance(transform.position, sgtePosicion) < distanciaPosicionAlcanzada) {
@@ -74,7 +68,7 @@ public class MovimientoPathfinding : MonoBehaviour
         else {
             //Quieto
             animacion.SetBool("Movimiento", false);
-            GetComponent<RangoMovimiento>().DefRango(Vector3.zero);
+            GetComponent<VelocidadMovimiento>().DefVelocidad(Vector3.zero);
         }
     }
 }

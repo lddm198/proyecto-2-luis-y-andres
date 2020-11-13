@@ -15,6 +15,6 @@ public class MoverPosicion : MonoBehaviour
     void Update()
     {
         Vector3 moverPos = (moverPosicion - transform.position).normalized;
-        GetComponent<RangoMovimiento>().DefRango(moverPos);
+        GetComponent<VelocidadMovimiento>().DefVelocidad(moverPos);
     }
 }
