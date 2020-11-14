@@ -14,7 +14,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GridPathfindingSystem;
+//using GridPathfindingSystem;
 
 public class MovePositionPathfinding : MonoBehaviour {
 
@@ -24,7 +24,7 @@ public class MovePositionPathfinding : MonoBehaviour {
 
     public void SetMovePosition(Vector3 movePosition, Action onReachedTargetPosition) {
         this.onReachedTargetPosition = onReachedTargetPosition;
-        pathVectorList = GridPathfinding.instance.GetPathRouteWithShortcuts(transform.position, movePosition).pathVectorList;
+        //pathVectorList = GridPathfinding.instance.GetPathRouteWithShortcuts(transform.position, movePosition).pathVectorList;
         /*Debug.Log("##########");
         foreach (Vector3 vec in pathVectorList) {
             Debug.Log(vec);
@@ -45,7 +45,7 @@ public class MovePositionPathfinding : MonoBehaviour {
             // Move to next path position
             Vector3 nextPathPosition = pathVectorList[pathIndex];
             Vector3 moveVelocity = (nextPathPosition - transform.position).normalized;
-            GetComponent<IMoveVelocity>().SetVelocity(moveVelocity);
+            //GetComponent<IMoveVelocity>().SetVelocity(moveVelocity);
 
             float reachedPathPositionDistance = 1f;
             if (Vector3.Distance(transform.position, nextPathPosition) < reachedPathPositionDistance) {
@@ -58,7 +58,7 @@ public class MovePositionPathfinding : MonoBehaviour {
             }
         } else {
             // Idle
-            GetComponent<IMoveVelocity>().SetVelocity(Vector3.zero);
+            //GetComponent<IMoveVelocity>().SetVelocity(Vector3.zero);
         }
     }
 

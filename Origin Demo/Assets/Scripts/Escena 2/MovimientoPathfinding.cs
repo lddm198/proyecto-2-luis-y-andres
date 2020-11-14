@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,13 +9,15 @@ public class MovimientoPathfinding : MonoBehaviour
     private List<Nodo_PathF> lisCaminoNod;
     private int indCamino = -1;
     public Pathfinding pathfinding;
+    private Action EnPosicionFinal;
     public List<Vector3> bloqueados;
     private int xIni, yIni, xFin, yFin;
     public Animator animacion;
     Vector3 sgtePosicion;
     Vector3 moverposicion;
 
-    public void DefPosicion(Vector3 moverPosicion, List<Vector3> bloq) {
+    public void DefPosicion(Vector3 moverPosicion, List<Vector3> bloq, Action EnPosicionFinal) {
+        this.EnPosicionFinal = EnPosicionFinal;
         this.moverposicion = moverPosicion;
         pathfinding = new Pathfinding(34, 14);
         bloqueados = bloq.ToList();
@@ -38,8 +41,7 @@ public class MovimientoPathfinding : MonoBehaviour
         pathfinding.ObtCuadricula().GetXY(posicion, out int x1, out int y1);
         pathfinding.ObtNodo(x1, y1).DefSeCamina(false);
     }
-
-    // Update is called once per frame
+   
     void FixedUpdate()
     {
         if (indCamino != -1) {
@@ -62,8 +64,11 @@ public class MovimientoPathfinding : MonoBehaviour
             float distanciaPosicionAlcanzada = 1f;
             if (Vector3.Distance(transform.position, sgtePosicion) < distanciaPosicionAlcanzada) {
                 indCamino++;
-                if (indCamino >= lisCaminoNod.Count) indCamino = -1; //Fin del camino
-            } 
+                if (indCamino >= lisCaminoNod.Count) {
+                    indCamino = -1; //Fin del camino
+                    EnPosicionFinal();
+                }
+            }
         }
         else {
             //Quieto

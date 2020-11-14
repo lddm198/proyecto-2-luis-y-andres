@@ -9,17 +9,17 @@ public class LecturaDeMouse : MonoBehaviour
     [SerializeField] private VisualTilemap visualTilemap;
 
     public List<Vector3> bloqueados;
+    private State estado;
 
-    private enum EstadoActual
+    private enum State
     {
         Normal,
         Esperando
     }
-    EstadoActual Estado;
 
     private void Awake()
     {
-        Estado = EstadoActual.Normal;
+        estado = State.Normal;
     }
 
     private void Start()
@@ -51,17 +51,27 @@ public class LecturaDeMouse : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
-        if (Input.GetMouseButtonDown(0)) {
-            if (visualTilemap.cuadricula2.ObtObjeto(UtilsClass.GetMouseWorldPosition()).ObtPosicionEnRango())
-            {
-                GetComponent<MovimientoPathfinding>().DefPosicion(UtilsClass.GetMouseWorldPosition(), bloqueados); //Le envia la posicion del mouse para moverlo mas adelante
-            }
-        }
+    {
+        switch (estado) {
+            case State.Normal:
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (visualTilemap.cuadricula2.ObtObjeto(UtilsClass.GetMouseWorldPosition()).ObtPosicionEnRango())
+                    {
+                        //Le envia la posicion del mouse para moverlo mas adelante
+                        estado = State.Esperando;
+                        GetComponent<MovimientoPathfinding>().DefPosicion(UtilsClass.GetMouseWorldPosition(), bloqueados, () => {
+                            estado = State.Normal;
+                            GetComponent<TilemapMovimiento>().ValidarPosicionParaMover();
+                        });
+                    }
+                }
+                break;
 
-        if (Input.GetMouseButtonDown(1))
-        {
-
+            case State.Esperando:
+                break;
         }
+        
     }
+
 }

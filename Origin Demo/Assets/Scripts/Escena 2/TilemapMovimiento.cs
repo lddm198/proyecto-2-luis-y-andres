@@ -10,7 +10,6 @@ public class TilemapMovimiento : MonoBehaviour
     private Tilemap tilemap;
     private Pathfinding pathfinding;
     private List<Vector3> bloqueados;
-
     private void Start()
     {
         ValidarPosicionParaMover();
@@ -58,11 +57,9 @@ public class TilemapMovimiento : MonoBehaviour
         tilemap.ObtCuadricula().GetXY(transform.position, out int xPos, out int yPos);
 
         //Se definen todas las posiciones como fuera de rango
-        for (int x1 = 0; x1 <= 34; x1++)
-        {
-            for (int y1 = 0; y1 <= 14; y1++)
-            {
-                //visualTilemap.cuadricula2.ObtObjeto(x1, y1).DefPosicionEnRango(false);
+        for (int x1 = 0; x1 < 34; x1++) {
+            for (int y1 = 0; y1 < 14; y1++) {
+                visualTilemap.cuadricula2.ObtObjeto(x1, y1).DefPosicionEnRango(false);
             }
         }
 
