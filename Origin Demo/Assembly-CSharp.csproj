@@ -128,7 +128,112 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaColorKey.shader" />
     <Reference Include="UnityEngine">
+<<<<<<< HEAD
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+=======
+      <HintPath>C:\Program Files\Unity\Editor\2019.4.13f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:\Program Files\Unity\Editor\2019.4.13f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\CodeMonkey\Assets.cs" />
+    <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollow.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollowSetup.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\ComponentActions.cs" />
+    <Compile Include="Assets\CodeMonkey\MonoBehaviours\PositionRendererSorter.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\Button_Sprite.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\Button_UI.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\FunctionTimer.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\FunctionUpdater.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_Bar.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_BarMultiple.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UI_TextComplex.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\UtilsClass.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\World_Bar.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\World_Mesh.cs" />
+    <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
+    <Compile Include="Assets\GridCombatSystem\Scripts\GameHandler_GridCombatSystem.cs" />
+    <Compile Include="Assets\GridCombatSystem\Scripts\GridCombatSystem.cs" />
+    <Compile Include="Assets\GridCombatSystem\Scripts\UnitGridCombat.cs" />
+    <Compile Include="Assets\NeonShapes\SelfDestroyScript.cs" />
+    <Compile Include="Assets\Scripts\Escena 1\Consumibles.cs" />
+    <Compile Include="Assets\Scripts\Escena 1\Enemigos.cs" />
+    <Compile Include="Assets\Scripts\Escena 1\Movimiento.cs" />
+    <Compile Include="Assets\Scripts\Escena 1\Pasaje.cs" />
+    <Compile Include="Assets\Scripts\Escena 1\Personaje.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\AnimacionTeclas.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\CambioPersonaje.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\CambioVelocidad.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\CombateCuadricula.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\Cuadricula.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\LecturaDeMouse.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MeshUtils.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MiDireccion.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MiVelocidad.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MoverPosicion.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MovimientoDirecto.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MovimientoMouse.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MovimientoPathfinding.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MovimientoRandom.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\MovimientoTeclas.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\Nodo_PathF.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\Pathfinding.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\Tilemap.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\TilemapMovimiento.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\Velocidad.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\VelocidadMovimiento.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\VisTilemapMovimiento.cs" />
+    <Compile Include="Assets\Scripts\Escena 2\VisualTilemap.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GroupLayer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\Layer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\Log.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ObjectLayer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\PolygonObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\PolylineObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\RectangleObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SpriteDepthInMap.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileLayer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs" />
+    <Compile Include="Assets\_\Stuff\Videos\ModularCharacter\Scripts\MovePositionPathfinding.cs" />
+    <None Include="Assets\Tiled2Unity\License.txt" />
+    <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDefault-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepth.shader" />
+    <None Include="Assets\Tiled2Unity\Imported\Castle.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Shaders\Tiled2Unity.cginc" />
+    <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Imported\Caste_2.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepthColorKey.shader" />
+    <None Include="Assets\CodeMonkey\README.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth.shader" />
+    <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepthColorKey-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
+    <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaColorKey-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Imported\Origin_mapa.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\Origin_demo.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepth-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaColorKey.shader" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files/Unity/Editor/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+>>>>>>> 91610f8db21f4a00038e1899ff26f3e98d7c04d4
     </Reference>
     <Reference Include="UnityEngine.AIModule">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

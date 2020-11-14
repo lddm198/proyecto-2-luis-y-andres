@@ -42,7 +42,7 @@ public class Cuadricula<TObjetoCuad> {
             {
                 for (int y = 0; y < matCuadricula.GetLength(1); y++)
                 {
-                    DebugCuadricula[x, y] = UtilsClass.CreateWorldText(matCuadricula[x, y]?.ToString(), null, GetPosicionMundo(x, y) + new Vector3(tamCuadro, tamCuadro) * .5f, 30, Color.white, TextAnchor.MiddleCenter); //Aqui se crea el texto
+                    DebugCuadricula[x, y] = UtilsClass.CreateWorldText("", null, GetPosicionMundo(x, y) + new Vector3(tamCuadro, tamCuadro) * .5f, 30); //Aqui se crea el texto
                     Debug.DrawLine(GetPosicionMundo(x, y), GetPosicionMundo(x, y + 1), Color.white, 100f); //Los debug.DrawLine se estan uasndo para hacer 
                     Debug.DrawLine(GetPosicionMundo(x, y), GetPosicionMundo(x + 1, y), Color.white, 100f); //la cuadricula visible 
                 }
@@ -50,7 +50,6 @@ public class Cuadricula<TObjetoCuad> {
             Debug.DrawLine(GetPosicionMundo(0, alto), GetPosicionMundo(ancho, alto), Color.white, 100f); //Para rellenar la parte de arriba y de la derecha 
             Debug.DrawLine(GetPosicionMundo(ancho, 0), GetPosicionMundo(ancho, alto), Color.white, 100f); //de la cuadricula
         }
-
     }
 
     public Vector3 GetPosicionMundo(int x, int y){
