@@ -1,4 +1,5 @@
-﻿using CodeMonkey.Utils;
+﻿using System;
+using CodeMonkey.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
@@ -9,18 +10,6 @@ public class LecturaDeMouse : MonoBehaviour
     [SerializeField] private VisualTilemap visualTilemap;
 
     public List<Vector3> bloqueados;
-    private State estado;
-
-    private enum State
-    {
-        Normal,
-        Esperando
-    }
-
-    private void Awake()
-    {
-        estado = State.Normal;
-    }
 
     private void Start()
     {
@@ -52,26 +41,20 @@ public class LecturaDeMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (estado) {
-            case State.Normal:
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (visualTilemap.cuadricula2.ObtObjeto(UtilsClass.GetMouseWorldPosition()).ObtPosicionEnRango())
-                    {
-                        //Le envia la posicion del mouse para moverlo mas adelante
-                        estado = State.Esperando;
-                        GetComponent<MovimientoPathfinding>().DefPosicion(UtilsClass.GetMouseWorldPosition(), bloqueados, () => {
-                            estado = State.Normal;
-                            GetComponent<TilemapMovimiento>().ValidarPosicionParaMover();
-                        });
-                    }
-                }
-                break;
-
-            case State.Esperando:
-                break;
+        if (Input.GetMouseButtonDown(0)) {
+            if (visualTilemap.cuadricula2.ObtObjeto(UtilsClass.GetMouseWorldPosition()).ObtPosicionEnRango() && !gameObject.GetComponent<Unidad>().seMovio) {
+                //Le envia la posicion del mouse para moverlo mas adelante
+                GetComponent<MovimientoPathfinding>().DefPosicion(UtilsClass.GetMouseWorldPosition(), bloqueados, () => {
+                    GetComponent<TilemapMovimiento>().ValidarPosicionParaMover(visualTilemap);
+                });
+                gameObject.GetComponent<Unidad>().seMovio = true;
+            }
         }
-        
+        if (Input.GetMouseButtonDown(1)) {
+            gameObject.GetComponent<Unidad>().ataco = true;
+
+        }
+
     }
 
 }

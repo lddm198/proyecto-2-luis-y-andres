@@ -1,4 +1,6 @@
-﻿using Boo.Lang;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using CodeMonkey.Utils;
 using System.Linq;
 using UnityEngine;
@@ -12,10 +14,10 @@ public class TilemapMovimiento : MonoBehaviour
     private List<Vector3> bloqueados;
     private void Start()
     {
-        ValidarPosicionParaMover();
+        ValidarPosicionParaMover(visualTilemap);
     }
 
-    public void ValidarPosicionParaMover()
+    public void ValidarPosicionParaMover(VisualTilemap visualTilemap)
     {
         bloqueados = new List<Vector3>()
         {
