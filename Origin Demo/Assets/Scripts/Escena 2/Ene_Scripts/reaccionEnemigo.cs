@@ -9,36 +9,39 @@ public class reaccionEnemigo : MonoBehaviour
     //AudioSource reaccion;
     public AudioSource rabia;
     public int velocidad;
-    Vector2 ir;
+    public int velocidadRabia;
     bool caminar;
 
+    Vector2 ir;
+    Vector2 objetivo = new Vector2(10,90);
+
     void Start(){
-        spawn.enabled= false;
-
+        //spawn.enabled= false;
+ 
     }
-
-    void Update()
-    {
+    void Update(){
         if (caminar){
             this.transform.position=Vector2.MoveTowards(transform.position,ir,velocidad*Time.deltaTime);
         }
-        
-        
-        if(Vector2.Distance(transform.position,ir)<12f){
-            caminar=false;
+        if (!caminar){
+            this.transform.position=Vector2.MoveTowards(transform.position,objetivo,velocidadRabia*Time.deltaTime);
         }
-    }
+    }    
+
     private void OnTriggerStay2D(Collider2D personaje){
         //if (personaje.GetComponent<AudioSource>() !=null){
             //reaccion = personaje.GetComponent<AudioSource>();
+        if (personaje.tag == "Personaje"){
+            caminar = true;
             if (!rabia.isPlaying){
                 spawn.enabled=true;
                 rabia.Play();
                 ir = personaje.transform.position;
-                
-                caminar =true;
-
-            }
+           }
+        }
+        
         //}
     }
+
+    
 }
