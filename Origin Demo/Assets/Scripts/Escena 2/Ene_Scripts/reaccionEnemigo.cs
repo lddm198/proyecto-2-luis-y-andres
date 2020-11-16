@@ -20,11 +20,17 @@ public class reaccionEnemigo : MonoBehaviour
  
     }
     void Update(){
-        if (caminar){
-            this.transform.position=Vector2.MoveTowards(transform.position,ir,velocidad*Time.deltaTime);
-        }
-        if (!caminar){
-            this.transform.position=Vector2.MoveTowards(transform.position,objetivo,velocidadRabia*Time.deltaTime);
+        if (!gameObject.GetComponent<Unidad>().seMovio) {
+            if (caminar)
+            {
+                this.transform.position = Vector2.MoveTowards(transform.position, ir, velocidad * Time.deltaTime);
+                //gameObject.GetComponent<Unidad>().seMovio = true;
+            }
+            if (!caminar)
+            {
+                this.transform.position = Vector2.MoveTowards(transform.position, objetivo, velocidadRabia * Time.deltaTime);
+                //gameObject.GetComponent<Unidad>().seMovio = true;
+            }
         }
     }    
 

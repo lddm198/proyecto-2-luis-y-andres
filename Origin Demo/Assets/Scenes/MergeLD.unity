@@ -1882,13 +1882,15 @@ MonoBehaviour:
   mini: {fileID: 1634577280}
   espora: {fileID: 847031084}
   ogro: {fileID: 1951519544}
+  lapida1_1: {fileID: 0}
+  lapida2_1: {fileID: 0}
+  lapida3_1: {fileID: 0}
   cantMini: 1
   cantEspora: 0
   cantOgro: 0
   spawnTimeMini: 1
   spawnTimeEspora: 10
   spawnTimeOgro: 20
-  rangoGenerar: 4
 --- !u!4 &584318289
 Transform:
   m_ObjectHideFlags: 0
@@ -2243,12 +2245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcb762253a6d284a841e8f050ae8b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneda: {fileID: 1553182272}
-  comida: {fileID: 0}
-  coleccionables: {fileID: 0}
-  cantMoneda: 11
-  cantComida: 0
-  cantColeccionables: 0
+  gema: {fileID: 0}
+  jade: {fileID: 0}
+  d_or: {fileID: 0}
+  cantGema: 0
+  cantJade: 0
+  cantD_or: 0
   rangoGenerar: 50
 --- !u!4 &608773611
 Transform:
@@ -9275,24 +9277,18 @@ PrefabInstance:
     - target: {fileID: 6290937028917689580, guid: ed59d7269664d2e4683bdb45221e6ad3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 70
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6290937028917689580, guid: ed59d7269664d2e4683bdb45221e6ad3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 70
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed59d7269664d2e4683bdb45221e6ad3, type: 3}
 --- !u!4 &1553182271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6290937028917689580, guid: ed59d7269664d2e4683bdb45221e6ad3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1553182270}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1553182272 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2735031626680109220, guid: ed59d7269664d2e4683bdb45221e6ad3,
     type: 3}
   m_PrefabInstance: {fileID: 1553182270}
   m_PrefabAsset: {fileID: 0}
@@ -9405,6 +9401,7 @@ MonoBehaviour:
   spawn: {fileID: 1634577287}
   rabia: {fileID: 1634577284}
   velocidad: 50
+  velocidadRabia: 0
 --- !u!82 &1634577284
 AudioSource:
   m_ObjectHideFlags: 0
