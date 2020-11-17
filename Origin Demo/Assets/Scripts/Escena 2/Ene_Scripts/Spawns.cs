@@ -1,19 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawns : MonoBehaviour
 {
     
-    public GameObject mini;
-    public GameObject espora;
-    public GameObject ogro;
+    public GameObject zombie;
+    public GameObject ojoVolador;
+    public GameObject demonio;
 
     public GameObject lapida1_1;
     public GameObject lapida2_1;
     public GameObject lapida3_1;
     
-    public int cantMini, cantEspora, cantOgro;
+    public int cantZombies, cantOjo, cantDemonio;
     private int x = 0, y = 0, z = 0, pos1 = 0, pos2 = 0, pos3 = 0;
 
     // creamos tres instancias de listas porque queremos llevar por separado los spawns
@@ -23,13 +24,14 @@ public class Spawns : MonoBehaviour
 
 
 
-    public float  spawnTimeMini = 5f,spawnTimeEspora = 10f,spawnTimeOgro = 15f;
+    public float  spawnTimeZombie = 5f,spawnTimeOjo = 10f,spawnTimeDemonio = 15f;
+    public SistemaTurnos lista;
 
     void Start(){
         
-        InvokeRepeating("generarMini",0.0f,spawnTimeMini);
-        InvokeRepeating("generarEspora",10.0f,spawnTimeEspora);
-        InvokeRepeating("generarOgro",20.0f,spawnTimeOgro);
+        InvokeRepeating("generarZombie", 0.0f, spawnTimeZombie);
+        InvokeRepeating("generarOjo", 10.0f, spawnTimeOjo);
+        InvokeRepeating("generarDemonio", 20.0f, spawnTimeDemonio);
 
         //declaramos en que spawn va a aparecer (x,y,z)
 
@@ -41,33 +43,32 @@ public class Spawns : MonoBehaviour
 
 
     }
-    public void generarMini(){
+    public void generarZombie(){
         //instanciamos un clon
-        GameObject Mini = Instantiate (mini,spawns[pos1],Quaternion.identity);
-
+        GameObject Zombie = Instantiate (zombie,spawns[pos1],Quaternion.identity);
+        lista.AnadirEnemigo(Zombie);
         x++;
         pos1++;
         if (pos1 == 2){pos1=0;}
-        if (cantMini == x){CancelInvoke ("generarMini");}
+        if (cantZombies == x){CancelInvoke ("generarZombie");}
     }
 
-    public void generarEspora(){
+    public void generarOjo(){
         //instanciamos un clon
-        GameObject Espora = Instantiate (espora,spawns[pos2],Quaternion.identity);
-
+        GameObject Ojo = Instantiate (ojoVolador,spawns[pos2],Quaternion.identity);
+        lista.AnadirEnemigo(Ojo);
         y++;      
         pos2++;
         if (pos2 == 2){pos2=0;}  
-        if ( cantEspora != y){CancelInvoke ("generarEspora");} 
+        if ( cantOjo != y){CancelInvoke ("generarOjo");} 
     }
-
-    public void generarOgro(){
+    public void generarDemonio(){
         //instanciamos un clon
-        GameObject Ogro = Instantiate (ogro,spawns[pos3],Quaternion.identity);
-        
+        GameObject Demonio = Instantiate (demonio,spawns[pos3],Quaternion.identity);
+        lista.AnadirEnemigo(Demonio);
         z++;
         pos3++;
         if (pos3 == 2){pos3=0;}
-        if (cantOgro != z){CancelInvoke ("generarEspora");}
+        if (cantDemonio != z){CancelInvoke ("generarDemonio");}
     }
 }

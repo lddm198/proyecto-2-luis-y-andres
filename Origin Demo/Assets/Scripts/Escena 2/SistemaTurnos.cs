@@ -9,11 +9,11 @@ public enum EstadoJuego { TurnoPersonajes, TurnoEnemigos }
 public class SistemaTurnos : MonoBehaviour
 {
 
-    [SerializeField] private GameObject[] arregloUnidades;
+    [SerializeField] public GameObject[] arregloUnidades;
     public GameObject cambioPersonajes;
 
     private List<GameObject> personajes;
-    private List<GameObject> enemigos;
+    public List<GameObject> enemigos;
     public EstadoJuego estadoJuego;
     public Text textoTurno;
 
@@ -28,6 +28,10 @@ public class SistemaTurnos : MonoBehaviour
 
         DividirUnidades();
 
+    }
+
+    public void AnadirEnemigo(GameObject enemigo) {
+        enemigos.Add(enemigo);
     }
 
     public void DividirUnidades()
