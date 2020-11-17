@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Escena Oficial.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/NewMerge_.unity
+=======
+- path: Assets/Scenes/New Merge ACE.unity
+>>>>>>> b318fbea37ce90462a144130396f4a1ac5f308e7
+>>>>>>> c3c509c8a6d326e93ca37625f34b30fd0b79825b
   isLoaded: 1
   isActive: 1
   isSubScene: 0
