@@ -21,10 +21,10 @@ public class reaccionEnemigo : MonoBehaviour
     }
     void Update(){
         if (caminar){
-            this.transform.position=Vector2.MoveTowards(transform.position,ir,velocidad*Time.deltaTime);
+            this.transform.position=Vector2.MoveTowards(transform.position,ir,velocidadRabia*Time.deltaTime);
         }
         if (!caminar){
-            this.transform.position=Vector2.MoveTowards(transform.position,objetivo,velocidadRabia*Time.deltaTime);
+            this.transform.position=Vector2.MoveTowards(transform.position,objetivo,velocidad*Time.deltaTime);
         }
     }    
 

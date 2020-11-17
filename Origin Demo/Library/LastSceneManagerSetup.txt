@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/MergeLD.unity
-=======
-- path: Assets/Scenes/New Merge ACE.unity
->>>>>>> 04bcc895acf874fa464741e95972bd0aaba77fa9
+- path: Assets/Scenes/NewMerge_.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

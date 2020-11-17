@@ -10,7 +10,7 @@ public class reaccionComidaManzana : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D personaje){
         
-        if (personaje.tag != "Enemigo" && personaje.tag != "Consumibles" && personaje.tag!="Moneda"){
+        if (personaje.tag == "Personaje"){
             manzana.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(GetComponent<Collider2D>());
             if (!comidaSFX.isPlaying){
