@@ -129,7 +129,6 @@
     <Compile Include="Assets\Scripts\Escena 2\Unidad.cs" />
     <Compile Include="Assets\Scripts\Escena 2\Velocidad.cs" />
     <Compile Include="Assets\Scripts\Escena 2\VelocidadMovimiento.cs" />
-    <Compile Include="Assets\Scripts\Escena 2\VisTilemapMovimiento.cs" />
     <Compile Include="Assets\Scripts\Escena 2\VisualTilemap.cs" />
     <Compile Include="Assets\_\Stuff\Videos\ModularCharacter\Scripts\MovePositionPathfinding.cs" />
     <Compile Include="Assets\pasos.cs" />
