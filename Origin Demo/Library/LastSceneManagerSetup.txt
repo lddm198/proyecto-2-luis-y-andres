@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Nueva.unity
+=======
+- path: Assets/Scenes/Merge.unity
+>>>>>>> 2f221ae97e0e37387b7ca96ceb8e12e0e09d175d
   isLoaded: 1
   isActive: 1
   isSubScene: 0

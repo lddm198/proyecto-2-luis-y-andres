@@ -8,6 +8,13 @@ TagManager:
   - Consumibles
   - Personaje
   - Enemigo
+  - Saco
+  - Gema
+  - Jade
+  - Dor
+  - Manzana
+  - Sandia
+  - Cereza
   layers:
   - Default
   - TransparentFX

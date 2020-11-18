@@ -15,6 +15,7 @@ public class Spawns : MonoBehaviour
     public GameObject lapida3_1;
     
     public int cantZombies, cantOjo, cantDemonio;
+    private bool spawnOjo = true, spawnZombie= true, spawnDemonio= true;
     private int x = 0, y = 0, z = 0, pos1 = 0, pos2 = 0, pos3 = 0;
 
     // creamos tres instancias de listas porque queremos llevar por separado los spawns
@@ -24,17 +25,16 @@ public class Spawns : MonoBehaviour
 
 
 
-    public float  spawnTimeZombie = 5f,spawnTimeOjo = 10f,spawnTimeDemonio = 15f;
+    public float  spawnTimeZombie = 5f,spawnTimeOjo = 1f,spawnTimeDemonio = 1f;
     public SistemaTurnos lista;
 
+    
     void Start(){
-        
-        InvokeRepeating("generarZombie", 0.0f, spawnTimeZombie);
-        InvokeRepeating("generarOjo", 10.0f, spawnTimeOjo);
-        InvokeRepeating("generarDemonio", 20.0f, spawnTimeDemonio);
 
         //declaramos en que spawn va a aparecer (x,y,z)
-
+        if (spawnZombie){InvokeRepeating("generarZombie", 0.0f,spawnTimeZombie);}
+        if (spawnOjo){InvokeRepeating("generarOjo", 0.0f,spawnTimeOjo);}
+        if (spawnDemonio){InvokeRepeating("generarDemonio", 0.0f,spawnTimeDemonio);}
         //se pueden agregar mas lapidas al mapa y más spawns para enemigos
 
         spawns.Add(new Vector3(lapida1_1.transform.position.x,lapida1_1.transform.position.y,160f));
@@ -46,29 +46,33 @@ public class Spawns : MonoBehaviour
     public void generarZombie(){
         //instanciamos un clon
         GameObject Zombie = Instantiate (zombie,spawns[pos1],Quaternion.identity);
-        lista.AnadirEnemigo(Zombie);
-        x++;
-        pos1++;
+//        lista.AnadirEnemigo(Zombie);
+
         if (pos1 == 2){pos1=0;}
-        if (cantZombies == x){CancelInvoke ("generarZombie");}
+        x++;
+        if (cantZombies == x){CancelInvoke ("generarZombie");spawnZombie= false;}
+        pos1++;
+        
     }
 
     public void generarOjo(){
         //instanciamos un clon
         GameObject Ojo = Instantiate (ojoVolador,spawns[pos2],Quaternion.identity);
-        lista.AnadirEnemigo(Ojo);
-        y++;      
-        pos2++;
+       // lista.AnadirEnemigo(Ojo);
+
         if (pos2 == 2){pos2=0;}  
-        if ( cantOjo != y){CancelInvoke ("generarOjo");} 
+        y++;
+        if ( cantOjo == y){CancelInvoke ("generarOjo");spawnOjo= false;}       
+        pos2++;
     }
     public void generarDemonio(){
         //instanciamos un clon
         GameObject Demonio = Instantiate (demonio,spawns[pos3],Quaternion.identity);
-        lista.AnadirEnemigo(Demonio);
+        //lista.AnadirEnemigo(Demonio);
+
         z++;
         pos3++;
         if (pos3 == 2){pos3=0;}
-        if (cantDemonio != z){CancelInvoke ("generarDemonio");}
+        if (cantDemonio == z){CancelInvoke ("generarDemonio");spawnDemonio= false;}
     }
 }
