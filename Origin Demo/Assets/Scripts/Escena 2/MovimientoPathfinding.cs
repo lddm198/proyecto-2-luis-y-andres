@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class MovimientoPathfinding : MonoBehaviour
 {
+    //variables que usaremos para definir el camoni del punto A al punto B
     private List<Nodo_PathF> lisCaminoNod;
     private int indCamino = -1;
     public Pathfinding pathfinding;
@@ -16,12 +17,13 @@ public class MovimientoPathfinding : MonoBehaviour
     Vector3 sgtePosicion;
     Vector3 moverposicion;
 
+    //definimos la posicion e incluimos los parametros de animación, la posicion a la cual nos vamos a mover y los puntos que estan bloqueados
     public void DefPosicion(Vector3 moverPosicion, List<Vector3> bloq, Action EnPosicionFinal) {
         this.EnPosicionFinal = EnPosicionFinal;
         this.moverposicion = moverPosicion;
         pathfinding = new Pathfinding(34, 14);
         bloqueados = bloq.ToList();
-        while(bloqueados.Count > 0) {
+        while(bloqueados.Count > 0) { //eliminamos todos los puntos que estén bloqueados
             if(bloqueados[0] != Vector3.zero)
             {
                 Block(bloqueados[0], pathfinding);
@@ -38,8 +40,8 @@ public class MovimientoPathfinding : MonoBehaviour
     }
 
     public void Block(Vector3 posicion, Pathfinding pathfinding) {
-        pathfinding.ObtCuadricula().GetXY(posicion, out int x1, out int y1);
-        pathfinding.ObtNodo(x1, y1).DefSeCamina(false);
+        pathfinding.ObtCuadricula().GetXY(posicion, out int x1, out int y1);//excluimos los puntos de la cuadricula
+        pathfinding.ObtNodo(x1, y1).DefSeCamina(false);//declaramos falso el camino
     }
    
     void FixedUpdate()
@@ -59,7 +61,7 @@ public class MovimientoPathfinding : MonoBehaviour
             }
 
             Vector3 velocidad = (sgtePosicion - transform.position).normalized;
-            GetComponent<VelocidadMovimiento>().DefVelocidad(velocidad);
+            GetComponent<VelocidadMovimiento>().DefVelocidad(velocidad); // definimos la velocidad con la que avanzará el jugador
 
             float distanciaPosicionAlcanzada = 1f;
             if (Vector3.Distance(transform.position, sgtePosicion) < distanciaPosicionAlcanzada) {
