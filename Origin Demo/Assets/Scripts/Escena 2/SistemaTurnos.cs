@@ -60,6 +60,12 @@ public class SistemaTurnos : MonoBehaviour
             if (VerificarFin("enemigos")) {
                 CambioTurno("personajes");
             }
+            else
+            {
+                foreach(GameObject enemigos in enemigos) {
+                    enemigos.GetComponent<reaccionEnemigo>().Mover();
+                }
+            }
         }
     }
 

@@ -50,11 +50,6 @@ public class LecturaDeMouse : MonoBehaviour
                 gameObject.GetComponent<Unidad>().seMovio = true;
             }
         }
-        if (Input.GetMouseButtonDown(1)) {
-            gameObject.GetComponent<Unidad>().ataco = true;
-
-        }
-
     }
 
 }
