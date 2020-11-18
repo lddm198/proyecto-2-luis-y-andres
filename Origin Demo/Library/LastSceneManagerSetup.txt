@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/New 11-18.unity
+=======
+- path: Assets/Scenes/Copia.unity
+>>>>>>> 4c67a81562e6466c16e9393f9c6944f884d1153d
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -78,4 +78,5 @@ public class MovimientoPathfinding : MonoBehaviour
             GetComponent<VelocidadMovimiento>().DefVelocidad(Vector3.zero);
         }
     }
+
 }
