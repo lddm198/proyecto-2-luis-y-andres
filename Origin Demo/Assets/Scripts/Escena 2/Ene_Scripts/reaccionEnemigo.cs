@@ -41,11 +41,7 @@ public class reaccionEnemigo : MonoBehaviour
         };
 
     }
-<<<<<<< HEAD
     public void Mover(){
-=======
-    void Update(){
->>>>>>> 2f221ae97e0e37387b7ca96ceb8e12e0e09d175d
         if (!gameObject.GetComponent<Unidad>().seMovio) {
             if (caminar) {
                 MoverJugador();
