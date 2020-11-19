@@ -25,16 +25,16 @@ public class Spawns : MonoBehaviour
 
 
 
-    public float  spawnTimeZombie = 5f,spawnTimeOjo = 1f,spawnTimeDemonio = 1f;
+    public float  spawnTimeZombie = 0f,spawnTimeOjo = 0f,spawnTimeDemonio = 0f;
     public SistemaTurnos lista;
 
     
     void Start(){
 
         //declaramos en que spawn va a aparecer (x,y,z)
-        if (spawnZombie){InvokeRepeating("generarZombie", 0.0f,spawnTimeZombie);}
-        if (spawnOjo){InvokeRepeating("generarOjo", 0.0f,spawnTimeOjo);}
-        if (spawnDemonio){InvokeRepeating("generarDemonio", 0.0f,spawnTimeDemonio);}
+        if (cantZombies!=0){if (spawnZombie){InvokeRepeating("generarZombie", 0.0f,spawnTimeZombie);}}
+        if (cantOjo!=0){if (spawnOjo){InvokeRepeating("generarOjo", 0.0f,spawnTimeOjo);}}
+        if (cantDemonio!=0){if (spawnDemonio){InvokeRepeating("generarDemonio", 0.0f,spawnTimeDemonio);}}
         //se pueden agregar mas lapidas al mapa y más spawns para enemigos
 
         spawns.Add(new Vector3(lapida1_1.transform.position.x,lapida1_1.transform.position.y,160f));

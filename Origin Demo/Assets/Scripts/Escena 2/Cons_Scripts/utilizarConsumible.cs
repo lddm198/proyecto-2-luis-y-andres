@@ -20,15 +20,15 @@ public class utilizarConsumible : MonoBehaviour
    void Update(){
         health = gameObject.GetComponent<Unidad>().VidaActual;
         vida.value=health;
-       float x=transform.position.x, y=transform.position.y,z=0f;
-       Vector3 follow = new Vector3(x,y-5f,z);
-       vida.transform.position=follow;
-       if(Input.GetKeyDown(KeyCode.E)){
-           Debug.Log(cont.cantComidaDis());
-          if (cont.cantComidaDis()>0){
-               regenerarVida(5);
-               cont.consumir(1);
-          }
+        updatePos(vida);
+        if (gameObject.tag=="Personaje"){
+            if(Input.GetKeyDown(KeyCode.E)){
+                Debug.Log(cont.cantComidaDis());
+                if (cont.cantComidaDis()>0){
+                    regenerarVida(5);
+                    cont.consumir(1);
+                }
+            }
         }
     }
 
@@ -37,6 +37,11 @@ public class utilizarConsumible : MonoBehaviour
         gameObject.GetComponent<Unidad>().VidaActual = vida.value;
         
 
+    }
+    public void updatePos(Slider vida){
+        float x=gameObject.transform.position.x, y=gameObject.transform.position.y,z=0f;
+        Vector3 follow = new Vector3(x,y-5f,z);
+        vida.transform.position = follow;
     }
 }
 

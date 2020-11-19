@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7009373859463801693}
   m_Layer: 0
   m_Name: D'or
-  m_TagString: Consumibles
+  m_TagString: Dor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

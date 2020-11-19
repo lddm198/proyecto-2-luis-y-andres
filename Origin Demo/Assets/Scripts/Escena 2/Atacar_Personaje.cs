@@ -14,11 +14,6 @@ public class Atacar_Personaje : MonoBehaviour
     public LayerMask capa;
     private Vector3 posicion;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
 
     IEnumerator Animacion_ataque()
     {

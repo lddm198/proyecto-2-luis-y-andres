@@ -11,14 +11,12 @@ public class Contadores : MonoBehaviour
     public Text marcadorJade;
     public Text marcadorDor;
     private int cantDinero;
-    private int cantComida = 10;
+    private int cantComida;
     private int cantGema;
     private int cantJade;
     private int cantDor;
 
-    void Update(){
-        marcadorComida.text = "x " + cantComida;
-    }
+    
 
     void OnTriggerStay2D(Collider2D obj){
 

@@ -63,7 +63,7 @@ public class CambioPersonaje : MonoBehaviour
         vikingo.GetComponent<utilizarConsumible>().enabled = true;
         mago.GetComponent<utilizarConsumible>().enabled = true;
 
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(1f);
 
         ninja.GetComponent<utilizarConsumible>().enabled = true;
         vikingo.GetComponent<utilizarConsumible>().enabled = false;

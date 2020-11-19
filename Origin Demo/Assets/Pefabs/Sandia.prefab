@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6236114719798623020}
   m_Layer: 0
   m_Name: Sandia
-  m_TagString: Consumibles
+  m_TagString: Sandia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 314407135192538945}
   m_Layer: 0
   m_Name: Saco
-  m_TagString: Consumibles
+  m_TagString: Saco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
