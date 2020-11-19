@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5941968166555872199}
   m_Layer: 0
   m_Name: Cereza
-  m_TagString: Consumibles
+  m_TagString: Cereza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

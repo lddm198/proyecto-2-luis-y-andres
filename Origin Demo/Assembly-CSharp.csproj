@@ -99,9 +99,9 @@
      <Compile Include="Assets\Scripts\Escena 2\Cons_Scripts\Controladores\controladorDinero.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Cons_Scripts\Dinero\reaccionMoneda.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Cons_Scripts\Dinero\reaccionSaco.cs" />
-     <Compile Include="Assets\Scripts\Escena 2\Cons_Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Cons_Scripts\utilizarConsumible.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Cuadricula.cs" />
+     <Compile Include="Assets\Scripts\Escena 2\Ene_Scripts\Atacar_Enemigo.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Ene_Scripts\Pasos.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Ene_Scripts\Spawns.cs" />
      <Compile Include="Assets\Scripts\Escena 2\Ene_Scripts\reaccionEnemigo.cs" />
