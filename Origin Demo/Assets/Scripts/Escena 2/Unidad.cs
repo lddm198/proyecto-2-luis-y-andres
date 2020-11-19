@@ -16,10 +16,17 @@ public class Unidad : MonoBehaviour
     public bool seMovio;
     public bool ataco;
     public Animator animacion;
+    public bool Muerto;
 
     public void Morir() {
         animacion.SetBool("Muerte", true);
+        Muerto = true;
+        ataco = true;
+        seMovio = true;
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<Unidad>().enabled = false;
+        GetComponent<reaccionEnemigo>().enabled = false;
+        GetComponent<MovimientoPathfindingEnemigos>().enabled = false;
         this.enabled = false;
         Debug.Log("El " + Nombre + " ha muerto!!");
     }

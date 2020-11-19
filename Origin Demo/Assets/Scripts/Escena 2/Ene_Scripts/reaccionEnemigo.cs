@@ -55,14 +55,14 @@ public class reaccionEnemigo : MonoBehaviour
     public void MoverJugador()
     {
         gameObject.GetComponent<Unidad>().seMovio = true;
-        gameObject.GetComponent<Unidad>().ataco = true;
+        //gameObject.GetComponent<Unidad>().ataco = true;
         GetComponent<MovimientoPathfindingEnemigos>().DefPosicion(ir, bloqueados, () => { });
     }
 
     public void MoverObjetivo()
     {
         gameObject.GetComponent<Unidad>().seMovio = true;
-        gameObject.GetComponent<Unidad>().ataco = true;
+        //gameObject.GetComponent<Unidad>().ataco = true;
         GetComponent<MovimientoPathfindingEnemigos>().DefPosicion(objetivo, bloqueados, () => { });
     }
 

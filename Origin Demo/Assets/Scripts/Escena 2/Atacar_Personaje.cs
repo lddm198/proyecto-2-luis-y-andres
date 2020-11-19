@@ -28,11 +28,13 @@ public class Atacar_Personaje : MonoBehaviour
 
         foreach (Collider2D enemigoGolpeado in enemigos) {
             GameObject enemigo =  enemigoGolpeado.gameObject.GetComponent<ObtenerPadre>().ObtPadre();
-            enemigo.GetComponent<Unidad>().VidaActual = enemigo.GetComponent<Unidad>().VidaActual - gameObject.GetComponent<Unidad>().Daño;
-            CMDebug.TextPopupMouse("-" + gameObject.GetComponent<Unidad>().Daño + " " + enemigo.GetComponent<Unidad>().Nombre);
+            if (!enemigo.GetComponent<Unidad>().Muerto) {
+                enemigo.GetComponent<Unidad>().VidaActual = enemigo.GetComponent<Unidad>().VidaActual - gameObject.GetComponent<Unidad>().Daño;
+                CMDebug.TextPopupMouse("-" + gameObject.GetComponent<Unidad>().Daño + " " + enemigo.GetComponent<Unidad>().Nombre);
 
-            if(enemigo.GetComponent<Unidad>().VidaActual <= 0) {
-                enemigo.GetComponent<Unidad>().Morir();
+                if (enemigo.GetComponent<Unidad>().VidaActual <= 0) {
+                    enemigo.GetComponent<Unidad>().Morir();
+                }
             }
         }
     }

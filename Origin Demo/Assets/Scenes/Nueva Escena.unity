@@ -8020,8 +8020,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515228685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 137, y: 47.4, z: -9089.779}
-  m_LocalScale: {x: 1.482151, y: 1.4425254, z: 1}
+  m_LocalPosition: {x: 121.5, y: 48.6, z: -9089.779}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1789641788}
   m_RootOrder: 4
@@ -8767,8 +8767,8 @@ MonoBehaviour:
   moneda: {fileID: 1692583815}
   saco: {fileID: 1082826546}
   cantMonedas: 8
-  cantSacos: 2
-  rangoGenerar: 40
+  cantSacos: 0
+  rangoGenerar: 80
 --- !u!1 &724402191
 GameObject:
   m_ObjectHideFlags: 0
@@ -8836,7 +8836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -27, y: -71}
+  m_AnchoredPosition: {x: -72, y: -68}
   m_SizeDelta: {x: 127.35321, y: 93.99507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735150863
@@ -9050,7 +9050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829221101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 72.6, z: 160.5171}
+  m_LocalPosition: {x: -0.5, y: 71.8, z: 160.5171}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_Children:
   - {fileID: 88876612}
@@ -9296,6 +9296,7 @@ MonoBehaviour:
   seMovio: 0
   ataco: 0
   animacion: {fileID: 829221109}
+  Muerto: 0
 --- !u!1001 &892342845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9646,7 +9647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984223870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a899fed342dbe145aebf6df6b3ee123, type: 3}
   m_Name: 
@@ -9930,11 +9931,12 @@ MonoBehaviour:
   tipo: 1
   "Da\xF1o": 20
   sliderVida: {fileID: 657992300}
-  VidaMax: 100
+  VidaMax: 75
   VidaActual: 75
   seMovio: 1
   ataco: 1
   animacion: {fileID: 984223876}
+  Muerto: 0
 --- !u!1 &988232207
 GameObject:
   m_ObjectHideFlags: 0
@@ -12250,6 +12252,7 @@ MonoBehaviour:
   seMovio: 0
   ataco: 0
   animacion: {fileID: 1523031944}
+  Muerto: 0
 --- !u!1 &1537433361
 GameObject:
   m_ObjectHideFlags: 0
@@ -12865,8 +12868,8 @@ MonoBehaviour:
   gema: {fileID: 892342847}
   jade: {fileID: 409795981}
   d_or: {fileID: 234827630}
-  cantGema: 4
-  cantJade: 6
+  cantGema: 2
+  cantJade: 5
   cantD_or: 1
   rangoGenerar: 70
 --- !u!1 &1789641787
@@ -12951,10 +12954,10 @@ MonoBehaviour:
   cereza: {fileID: 1472684409}
   sandia: {fileID: 600924936}
   manzana: {fileID: 634088838}
-  cantCerezas: 4
-  cantSandias: 4
-  cantManzanas: 4
-  rangoGenerar: 60
+  cantCerezas: 1
+  cantSandias: 1
+  cantManzanas: 1
+  rangoGenerar: 70
 --- !u!1 &1835550816
 GameObject:
   m_ObjectHideFlags: 0
@@ -13271,6 +13274,7 @@ MonoBehaviour:
   seMovio: 0
   ataco: 0
   animacion: {fileID: 1879811925}
+  Muerto: 0
 --- !u!1 &1910082655
 GameObject:
   m_ObjectHideFlags: 0
@@ -14452,8 +14456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.00006, y: 213.00006}
-  m_SizeDelta: {x: 669.4046, y: 132.07983}
+  m_AnchoredPosition: {x: 77, y: 217.1}
+  m_SizeDelta: {x: 1182.823, y: 141.86795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970093917
 MonoBehaviour:
@@ -14545,7 +14549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005360970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a899fed342dbe145aebf6df6b3ee123, type: 3}
   m_Name: 
@@ -14761,7 +14765,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.08392817, y: 0.041457713}
   serializedVersion: 2
-  m_Radius: 0.28142342
+  m_Radius: 0.85
 --- !u!212 &2005360981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14829,11 +14833,12 @@ MonoBehaviour:
   tipo: 1
   "Da\xF1o": 25
   sliderVida: {fileID: 620254735}
-  VidaMax: 100
+  VidaMax: 30
   VidaActual: 30
   seMovio: 1
   ataco: 1
   animacion: {fileID: 2005360977}
+  Muerto: 0
 --- !u!1 &2015287451
 GameObject:
   m_ObjectHideFlags: 0
@@ -15178,7 +15183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137301735}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a899fed342dbe145aebf6df6b3ee123, type: 3}
   m_Name: 
@@ -15385,7 +15390,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.067841046, y: 0}
   serializedVersion: 2
-  m_Radius: 0.87684643
+  m_Radius: 2.26
 --- !u!50 &2137301746
 Rigidbody2D:
   serializedVersion: 4
@@ -15474,8 +15479,9 @@ MonoBehaviour:
   tipo: 1
   "Da\xF1o": 30
   sliderVida: {fileID: 397678226}
-  VidaMax: 100
-  VidaActual: 100
+  VidaMax: 110
+  VidaActual: 110
   seMovio: 1
   ataco: 1
   animacion: {fileID: 2137301743}
+  Muerto: 0

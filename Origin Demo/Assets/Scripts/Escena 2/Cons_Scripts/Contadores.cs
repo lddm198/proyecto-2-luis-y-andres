@@ -20,48 +20,65 @@ public class Contadores : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D obj){
 
-        if(obj.tag == "Moneda"){
-            cantDinero+=1;
+        if (obj.tag == "Moneda")
+        {
+            cantDinero += 1;
             marcadorDinero.text = "x " + cantDinero;
             Debug.Log(cantDinero);
         }
-        if(obj.tag == "Saco"){
-            cantDinero+=5;
+        if (obj.tag == "Saco")
+        {
+            cantDinero += 10;
             marcadorDinero.text = "x " + cantDinero;
             Debug.Log(cantDinero);
         }
-        if(obj.tag == "Gema"){
-            cantGema+=1;
+        if (obj.tag == "Gema")
+        {
+            cantGema += 1;
             marcadorGema.text = "x " + cantGema;
             Debug.Log(cantGema);
         }
-        if(obj.tag == "Jade"){
-            cantJade+=1;
+        if (obj.tag == "Jade")
+        {
+            cantJade += 1;
             marcadorJade.text = "x " + cantJade;
             Debug.Log(cantJade);
         }
-        if(obj.tag == "Dor"){
-            cantDor+=1;
+        if (obj.tag == "Dor")
+        {
+            cantDor += 1;
             marcadorDor.text = "x " + cantDor;
             Debug.Log(cantDor);
         }
-        if(obj.tag == "Cereza"){
-            cantComida+=1;
+        if (obj.tag == "Cereza")
+        {
+            cantComida += 1;
             marcadorComida.text = "x " + cantComida;
             Debug.Log(cantComida);
         }
-        if(obj.tag == "Sandia"){
-            cantComida+=1;
+        if (obj.tag == "Sandia")
+        {
+            cantComida += 1;
             marcadorComida.text = "x " + cantComida;
             Debug.Log(cantComida);
         }
-        if(obj.tag == "Manzana"){
-            cantComida+=1;
+        if (obj.tag == "Manzana")
+        {
+            cantComida += 1;
             marcadorComida.text = "x " + cantComida;
             Debug.Log(cantComida);
         }
-        
+
     } 
+
+    public void ActualizarCont()
+    {
+        marcadorDinero.text = "x " + cantDinero;
+        marcadorGema.text = "x " + cantGema;
+        marcadorJade.text = "x " + cantJade;
+        marcadorDor.text = "x " + cantDor;
+        marcadorComida.text = "x " + cantComida;
+    }
 
     public int cantComidaDis(){return cantComida;}
     public void consumir(int cant){cantComida-=cant;}

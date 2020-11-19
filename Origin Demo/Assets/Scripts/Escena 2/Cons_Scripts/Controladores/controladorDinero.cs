@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class controladorDinero : MonoBehaviour
 {
-     public GameObject moneda;
+    public GameObject moneda;
     public GameObject saco;
     public int cantMonedas, cantSacos;
     public float rangoGenerar = 0f;
